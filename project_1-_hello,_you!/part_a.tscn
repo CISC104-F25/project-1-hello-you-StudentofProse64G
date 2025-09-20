@@ -1,13 +1,86 @@
-[gd_scene load_steps=3 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=15 format=3 uid="uid://clwrsdsnmy3md"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys316"]
 albedo_color = Color(0.21448, 0.1344, 0.28, 1)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m6jki"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to4tk"]
+albedo_color = Color(1, 0.6862745, 0.039215688, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0jsbj"]
+material = SubResource("StandardMaterial3D_to4tk")
+
+[sub_resource type="SphereMesh" id="SphereMesh_q6bo7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_eso0h"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_trumw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_e7awo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_j0tu7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3xb3d"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_grw75"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0j4pn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uojgb"]
+
 [node name="Part_A" type="Node3D"]
 
 [node name="PlaceholderFloor" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, 0, 0, 0)
+transform = Transform3D(19.355467, 0, -0.24092351, 0, 7.2269998, 0, 0.24357864, 0, 19.144484, -0.018985271, -0.120695114, -0.015791416)
 mesh = SubResource("PlaneMesh_m6jki")
 surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlaceholderFloor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlaceholderFloor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_m6jki")
+
+[node name="Sun" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.9995608, -0.0435253, 0.027164757, -0.043909032, 2.9993756, -0.042628903, -0.026540667, -0.04302024, -2.9995751, 0.06870484, 1.6270142, -0.09499571)
+mesh = SubResource("SphereMesh_0jsbj")
+metadata/_edit_lock_ = true
+
+[node name="Venus" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.089679, 0.41978574, 3.6753342)
+mesh = SubResource("SphereMesh_q6bo7")
+
+[node name="Mercury" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.96970934, -0.053521123, 0.23832706, 0.051974412, 0.99856675, 0.012773836, -0.23866913, 0, 0.97110116, 2.868948, 0.6025419, -4.179922)
+mesh = SubResource("SphereMesh_eso0h")
+
+[node name="Earth" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47610402, 0.47352004, -4.7368364)
+mesh = SubResource("SphereMesh_trumw")
+
+[node name="Mars" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7786376, 0.62747395, -2.3470796e-09, 0.0013250858, -0.0016443133, -0.99999785, -0.62747246, 0.77863586, -0.002111815, 5.711401, 0.43777156, 0.31156695)
+mesh = SubResource("SphereMesh_e7awo")
+
+[node name="Jupiter" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99957633, -0.029107973, 0, 0.029107973, 0.99957633, 0, 0, 0, 1, -6.0059285, 0.49590015, -0.07253116)
+mesh = SubResource("SphereMesh_j0tu7")
+
+[node name="Saturn" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4442647, 0.57984066, -2.937889)
+mesh = SubResource("SphereMesh_3xb3d")
+
+[node name="Uranus" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5035973, 0.55565834, -6.6237745)
+mesh = SubResource("SphereMesh_grw75")
+
+[node name="Neptune" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09214, 0.5616238, -5.291161)
+mesh = SubResource("SphereMesh_0j4pn")
+
+[node name="Pluto_Moon" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9526777, 0.5137694, -6.3671436)
+mesh = SubResource("SphereMesh_uojgb")

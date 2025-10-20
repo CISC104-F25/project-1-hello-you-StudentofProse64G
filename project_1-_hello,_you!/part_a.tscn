@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=41 format=3 uid="uid://clwrsdsnmy3md"]
 
 [ext_resource type="Texture2D" uid="uid://7teykdew4pb6" path="res://SunTexture.jpg" id="1_uojgb"]
 [ext_resource type="Texture2D" uid="uid://dy1ir6j5g2cu7" path="res://VenusTexture.webp" id="2_narcd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bnhiteabenngp" path="res://SaturnTexture.jpg" id="7_k0ie8"]
 [ext_resource type="Texture2D" uid="uid://l0on0rtjrsng" path="res://UranusTexture.webp" id="8_j41gs"]
 [ext_resource type="Texture2D" uid="uid://da4nirq3yf3j" path="res://NeptuneTexture.jpg" id="9_s5lpw"]
+[ext_resource type="Texture2D" uid="uid://bho2pru17277x" path="res://MoonTexture.jpg" id="10_narcd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grw75"]
 
@@ -72,11 +73,11 @@ albedo_texture = ExtResource("9_s5lpw")
 [sub_resource type="SphereMesh" id="SphereMesh_0j4pn"]
 material = SubResource("StandardMaterial3D_18iv2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trumw"]
-albedo_color = Color(0.40784314, 0.4117647, 0.42745098, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr1d8"]
+albedo_texture = ExtResource("10_narcd")
 
 [sub_resource type="SphereMesh" id="SphereMesh_uojgb"]
-material = SubResource("StandardMaterial3D_trumw")
+material = SubResource("StandardMaterial3D_xr1d8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo5qo"]
 albedo_color = Color(0.7647059, 0.6313726, 0.44313726, 1)
@@ -112,7 +113,7 @@ material_override = SubResource("StandardMaterial3D_grw75")
 shape = SubResource("ConcavePolygonShape3D_m6jki")
 
 [node name="Sun" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.9994152, -0.058034226, 0.03621986, -0.058545385, 3.9991677, -0.05683852, -0.035387684, -0.057360332, -3.999432, 0.06870484, 1.6270142, -0.09499571)
+transform = Transform3D(-0.45922822, 3.9728668, 0.073741496, 3.776776, 0.45948172, -1.2348421, -1.2349367, -0.07214213, -3.8039093, 0.06870484, 1.6270142, -0.09499571)
 mesh = SubResource("SphereMesh_0jsbj")
 
 [node name="Venus" type="MeshInstance3D" parent="."]
@@ -136,7 +137,7 @@ transform = Transform3D(-0.3371719, 1.8878895, 0.5676165, 1.0863807, 0.65846694,
 mesh = SubResource("SphereMesh_j0tu7")
 
 [node name="Saturn" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.809576, 0.57984066, -12.534502)
+transform = Transform3D(-0.30645448, 1.9763819, 0, -1.9763819, -0.30645448, 0, 0, 0, 2, -3.809576, 0.57984066, -12.534502)
 mesh = SubResource("SphereMesh_3xb3d")
 
 [node name="Uranus" type="MeshInstance3D" parent="."]
@@ -148,7 +149,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 18.479336, 0.5616238, -
 mesh = SubResource("SphereMesh_0j4pn")
 
 [node name="Earths_Moon" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.652771, 0.7677405, -1.8724294)
+transform = Transform3D(0.5, 0, 0, 0, 0.283886, -0.411593, 0, 0.411593, 0.283886, -6.652771, 0.7677405, -1.8724294)
 mesh = SubResource("SphereMesh_uojgb")
 
 [node name="Saturn_Rings" type="MeshInstance3D" parent="."]

@@ -1,80 +1,76 @@
-[gd_scene load_steps=32 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=40 format=3 uid="uid://clwrsdsnmy3md"]
 
-[ext_resource type="Texture2D" uid="uid://bceoaoi1a8t12" path="res://milky-way-space-universe-backgrounds-textures-2cd266-1024.jpg" id="1_eso0h"]
-[ext_resource type="Texture2D" path="res://Earth_from_Space.jpg" id="2_trumw"]
-[ext_resource type="Texture2D" uid="uid://dw8aqj0eddeya" path="res://Jupiter.jpg" id="3_e7awo"]
-[ext_resource type="Texture2D" uid="uid://jugb30oj8gxa" path="res://uranus.webp" id="4_j0tu7"]
-[ext_resource type="Texture2D" uid="uid://df21ywn65400j" path="res://Neptune.png" id="5_3xb3d"]
+[ext_resource type="Texture2D" uid="uid://7teykdew4pb6" path="res://SunTexture.jpg" id="1_uojgb"]
+[ext_resource type="Texture2D" uid="uid://dy1ir6j5g2cu7" path="res://VenusTexture.webp" id="2_narcd"]
+[ext_resource type="Texture2D" uid="uid://bxf0br6jdeqs8" path="res://panorama1.jpg" id="2_to4tk"]
+[ext_resource type="PackedScene" uid="uid://clhttn3a0ep70" path="res://part_c.tscn" id="3_0jsbj"]
+[ext_resource type="Texture2D" uid="uid://cke3yi0ljmxl6" path="res://MercuryTexture.webp" id="3_xr1d8"]
+[ext_resource type="Texture2D" uid="uid://cks3ffpaigo2q" path="res://EarthTexture.jpg" id="4_bo5qo"]
+[ext_resource type="Texture2D" uid="uid://dht1rdekkug23" path="res://MarsTexture.webp" id="5_tvfxj"]
+[ext_resource type="Texture2D" uid="uid://by2nejbps2hnk" path="res://JupiterTexture.jpg" id="6_2unr2"]
+[ext_resource type="PackedScene" uid="uid://4sy4oeoj170" path="res://part_b.tscn" id="6_trumw"]
+[ext_resource type="Texture2D" uid="uid://bnhiteabenngp" path="res://SaturnTexture.jpg" id="7_k0ie8"]
+[ext_resource type="Texture2D" uid="uid://l0on0rtjrsng" path="res://UranusTexture.webp" id="8_j41gs"]
+[ext_resource type="Texture2D" uid="uid://da4nirq3yf3j" path="res://NeptuneTexture.jpg" id="9_s5lpw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grw75"]
-albedo_texture = ExtResource("1_eso0h")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
-size = Vector2(3, 3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys316"]
-albedo_color = Color(0.21448, 0.1344, 0.28, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m6jki"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to4tk"]
-albedo_color = Color(0.9490196, 0.77254903, 0.34901962, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qeu8d"]
+albedo_texture = ExtResource("1_uojgb")
 
 [sub_resource type="SphereMesh" id="SphereMesh_0jsbj"]
-material = SubResource("StandardMaterial3D_to4tk")
+material = SubResource("StandardMaterial3D_qeu8d")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6jki"]
-albedo_color = Color(0.64705884, 0.4862745, 0.105882354, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x03ta"]
+albedo_texture = ExtResource("2_narcd")
 
 [sub_resource type="SphereMesh" id="SphereMesh_q6bo7"]
-material = SubResource("StandardMaterial3D_m6jki")
+material = SubResource("StandardMaterial3D_x03ta")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jsbj"]
-albedo_color = Color(0.40784314, 0.4117647, 0.42745098, 1)
+albedo_texture = ExtResource("3_xr1d8")
 
 [sub_resource type="SphereMesh" id="SphereMesh_eso0h"]
 material = SubResource("StandardMaterial3D_0jsbj")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6bo7"]
-albedo_texture = ExtResource("2_trumw")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq64m"]
+albedo_texture = ExtResource("4_bo5qo")
 
 [sub_resource type="SphereMesh" id="SphereMesh_trumw"]
-material = SubResource("StandardMaterial3D_q6bo7")
+material = SubResource("StandardMaterial3D_kq64m")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eso0h"]
-albedo_color = Color(0.75686276, 0.26666668, 0.05490196, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohuq4"]
+albedo_texture = ExtResource("5_tvfxj")
 
 [sub_resource type="SphereMesh" id="SphereMesh_e7awo"]
-material = SubResource("StandardMaterial3D_eso0h")
+material = SubResource("StandardMaterial3D_ohuq4")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j4pn"]
-albedo_color = Color(0.7882353, 0.5647059, 0.22352941, 1)
-albedo_texture = ExtResource("3_e7awo")
-uv1_scale = Vector3(-1, -1, -1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwyht"]
+albedo_texture = ExtResource("6_2unr2")
 
 [sub_resource type="SphereMesh" id="SphereMesh_j0tu7"]
-material = SubResource("StandardMaterial3D_0j4pn")
+material = SubResource("StandardMaterial3D_nwyht")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uojgb"]
-albedo_color = Color(0.7647059, 0.6313726, 0.44313726, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gft6p"]
+albedo_texture = ExtResource("7_k0ie8")
 
 [sub_resource type="SphereMesh" id="SphereMesh_3xb3d"]
-material = SubResource("StandardMaterial3D_uojgb")
+material = SubResource("StandardMaterial3D_gft6p")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_narcd"]
-albedo_color = Color(0.1882353, 0.8666667, 0.95686275, 1)
-albedo_texture = ExtResource("4_j0tu7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2peyv"]
+albedo_texture = ExtResource("8_j41gs")
 
 [sub_resource type="SphereMesh" id="SphereMesh_grw75"]
-material = SubResource("StandardMaterial3D_narcd")
+material = SubResource("StandardMaterial3D_2peyv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr1d8"]
-albedo_color = Color(0.24705882, 0.32941177, 0.7294118, 1)
-albedo_texture = ExtResource("5_3xb3d")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18iv2"]
+albedo_texture = ExtResource("9_s5lpw")
 
 [sub_resource type="SphereMesh" id="SphereMesh_0j4pn"]
-material = SubResource("StandardMaterial3D_xr1d8")
+material = SubResource("StandardMaterial3D_18iv2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trumw"]
 albedo_color = Color(0.40784314, 0.4117647, 0.42745098, 1)
@@ -90,13 +86,25 @@ material = SubResource("StandardMaterial3D_bo5qo")
 inner_radius = 0.874
 outer_radius = 0.756
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0jsbj"]
+panorama = ExtResource("2_to4tk")
+
+[sub_resource type="Sky" id="Sky_q6bo7"]
+sky_material = SubResource("PanoramaSkyMaterial_0jsbj")
+
+[sub_resource type="Environment" id="Environment_eso0h"]
+background_mode = 2
+sky = SubResource("Sky_q6bo7")
+
 [node name="Part_A" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 1.7022095, 0)
+shadow_enabled = true
 
 [node name="PlaceholderFloor" type="MeshInstance3D" parent="."]
 transform = Transform3D(19.355467, 0, -0.24092351, 0, 7.2269998, 0, 0.24357864, 0, 19.144484, 0.07353401, -0.47142792, -0.13211632)
 material_override = SubResource("StandardMaterial3D_grw75")
-mesh = SubResource("PlaneMesh_m6jki")
-surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PlaceholderFloor"]
 
@@ -139,10 +147,23 @@ mesh = SubResource("SphereMesh_grw75")
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 18.479336, 0.5616238, -10.088385)
 mesh = SubResource("SphereMesh_0j4pn")
 
-[node name="Pluto_Moon" type="MeshInstance3D" parent="."]
+[node name="Earths_Moon" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.652771, 0.7677405, -1.8724294)
 mesh = SubResource("SphereMesh_uojgb")
 
 [node name="Saturn_Rings" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.8840692, 0.66884977, 0.05406372, -0.66909426, 1.884758, 2.3404236e-09, -0.05094851, -0.018086864, 1.9992691, -3.856839, 0.5555229, -12.479658)
 mesh = SubResource("TorusMesh_tvfxj")
+
+[node name="SpaceShip" parent="." instance=ExtResource("6_trumw")]
+transform = Transform3D(0.46586627, -0.08864879, -0.15846166, -0.056676127, 0.3435604, -0.35882312, 0.17250079, 0.35228905, 0.31005782, -19.528738, -69.687386, -42.77117)
+
+[node name="Space" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Space"]
+environment = SubResource("Environment_eso0h")
+
+[node name="Part_C" parent="." instance=ExtResource("3_0jsbj")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.6607432, -0.68696433, -0.30248713, -0.24475908, -0.18377563, 0.9520082, -0.70958537, 0.70306945, -0.046712264, -0.016355038, 20.461933, 0.0061302185)

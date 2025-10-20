@@ -1,8 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://4sy4oeoj170"]
+[gd_scene load_steps=12 format=3 uid="uid://4sy4oeoj170"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_vq3a5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vq3a5"]
+albedo_color = Color(0.50980395, 0.50980395, 0.50980395, 1)
 
-[node name="Part_B" type="Node3D"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_gn0ur"]
+material = SubResource("StandardMaterial3D_vq3a5")
+top_radius = 2.0
 
-[node name="PlaceholderCube" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_vq3a5")
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vq3a5"]
+height = 3.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_gn0ur"]
+left_to_right = -0.8
+
+[sub_resource type="PrismMesh" id="PrismMesh_u6u1k"]
+left_to_right = -0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6u1k"]
+albedo_color = Color(1, 0.1882353, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_nsn63"]
+material = SubResource("StandardMaterial3D_u6u1k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id878"]
+albedo_color = Color(1, 0.1882353, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_3sstj"]
+material = SubResource("StandardMaterial3D_id878")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y244p"]
+albedo_color = Color(0.27058825, 0.7137255, 0.99607843, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2i18j"]
+material = SubResource("StandardMaterial3D_y244p")
+
+[node name="SpaceShip" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Rear_Jet" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 0.0087126875, -1.1999685, 0, 1.1999685, 0.0087126875, 1.9073486e-06, 12.707962, 5.2602453)
+mesh = SubResource("CylinderMesh_gn0ur")
+
+[node name="SpaceShip_Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.9998093, 0.032893583, -0.007882407, 0.00830273, -0.03834809, 2.9997435, 0.03279005, -2.9995744, -0.03843669, 0, 12.414817, 1.442)
+mesh = SubResource("CapsuleMesh_vq3a5")
+
+[node name="Wing_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.043980706, 2.9996777, 3.914694e-09, 0.13727883, -0.002012752, -2.996857, -2.9965346, 0.04393463, -0.13729356, 2.969139, 12.055023, -0.021565437)
+mesh = SubResource("PrismMesh_gn0ur")
+skeleton = NodePath("../SpaceShip_Body")
+
+[node name="Wing_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.20656718, -2.9927845, -0.023873806, 0.131646, -0.01482159, 2.9970734, -2.9899828, -0.20741333, 0.13030884, -2.9028082, 11.943209, -0.456604)
+mesh = SubResource("PrismMesh_u6u1k")
+skeleton = NodePath("../Wing_1")
+
+[node name="Fire_Effect_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 0.08021298, 5.999463, 0, -5.999463, 0.08021298, 0, 12.164861, 10.75107)
+mesh = SubResource("TorusMesh_nsn63")
+skeleton = NodePath("../Wing_2")
+
+[node name="Fire_Effect_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 0.08852163, 7.9995112, 0, -7.9995112, 0.08852163, 0, 12.6636505, 21.016794)
+mesh = SubResource("TorusMesh_3sstj")
+skeleton = NodePath("../Fire_Effect_1")
+
+[node name="SpaceShip_Windshield" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 12.900295, -2.499957)
+mesh = SubResource("SphereMesh_2i18j")
